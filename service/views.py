@@ -44,7 +44,7 @@ class UserComment(APIView):
 
     def delete(self, request, pk=0, id=0):
         with connection.cursor() as cursor:
-            cursor.execute("SELECT * FROM service_comments.user_comment_del(%s, %s, %s)", [pk, id])
+            cursor.execute("SELECT * FROM service_comments.user_comment_del(%s, %s)", [pk, id])
             upd_comment = cursor.fetchone()
 
         return Response({
